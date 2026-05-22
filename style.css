@@ -1,0 +1,265 @@
+/* Core Styling Rules & Document Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Master Responsive Canvas Environment */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #4a3538;
+    background-color: #fff2f5; /* Romantic blushing pink backdrop canvas */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Top Frame Sticky Header Area */
+.top-border {
+    background-color: #4a2831; /* Velvet royal burgundy */
+    color: #fff2f5;
+    padding: 16px 20px;
+    text-align: center;
+    border-bottom: 8px solid #ff8fa3; /* Framed underline indicator line */
+    box-shadow: 0 2px 10px rgba(74, 40, 49, 0.15);
+    z-index: 10;
+}
+
+.top-border h1 {
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+/* Bottom Frame Sticky Footer Area */
+.bottom-border {
+    background-color: #4a2831;
+    color: #ffccd5;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-top: 8px solid #ff8fa3;
+    z-index: 10;
+}
+
+/* Scrollable Main Content Middle Wrapper */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;    /* Center card elements vertically layout scale */
+    justify-content: center; /* Center card elements horizontally layout scale */
+    padding: 30px 20px;
+}
+
+/* Floating Interactive Game Container Card */
+.game-card {
+    width: 100%;
+    max-width: 520px;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(255, 143, 163, 0.18); /* Soft velvet shadow halo */
+    border: 1px solid rgba(255, 204, 213, 0.5);
+}
+
+/* Internal Card Structural Header */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.category-tag {
+    background-color: #ffe5ec;
+    color: #ff4d6d;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: #856a6e;
+    font-weight: 500;
+}
+
+/* Horizontal Progress Engine Containers */
+.progress-bar-container {
+    width: 100%;
+    height: 6px;
+    background-color: #fff0f3;
+    border-radius: 3px;
+    margin-bottom: 28px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 14.2%; /* Starts initial percentage index bounds */
+    background: linear-gradient(90deg, #ff758f, #ff4d6d);
+    border-radius: 3px;
+    transition: width 0.4s ease-out;
+}
+
+/* Content Text Layouts */
+.question-text {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #381e24;
+    margin-bottom: 24px;
+}
+
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+/* Itemized Option Selection Buttons styling */
+.option-btn {
+    background-color: #fffdfd;
+    border: 2px solid #ffe3e8;
+    color: #4a3538;
+    padding: 16px 20px;
+    border-radius: 16px;
+    text-align: left;
+    font-size: 0.98rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+    -webkit-tap-highlight-color: transparent; /* Fixes mobile click flicker */
+}
+
+.option-btn:hover:not(.selected) {
+    background-color: #fff5f7;
+    border-color: #ff8fa3;
+    transform: translateY(-1px);
+}
+
+.option-btn.selected {
+    background-color: #ff4d6d;
+    border-color: #ff4d6d;
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(255, 77, 109, 0.25);
+}
+
+/* Navigation Button Primary Call-To-Actions */
+.action-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff758f, #ff4d6d);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(255, 77, 109, 0.2);
+    transition: all 0.2s ease;
+}
+
+.action-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(255, 77, 109, 0.3);
+}
+
+.action-btn:disabled {
+    background: #f0e2e4;
+    color: #a69295;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* Dynamic Floating Toast Popup Elements (Clears user fingers on phone taps safely) */
+.trick-popup {
+    position: fixed;
+    background-color: #ff4d6d;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    pointer-events: none;
+    box-shadow: 0 6px 18px rgba(255, 77, 109, 0.35);
+    z-index: 1000;
+    transform: translate(-50%, -120%);
+    animation: floatUpAndOut 2s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Custom Video Container Panel Framework Formatting */
+#video-container {
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid #ff8fa3; 
+    box-shadow: 0 8px 25px rgba(255, 77, 109, 0.2);
+}
+
+#video-container video {
+    display: block;
+    object-fit: cover;
+}
+
+/* Score Screen Dashboard Elements Formatting */
+#results-box {
+    text-align: center;
+}
+
+.trophy-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.score-display {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ff4d6d;
+    margin: 10px 0;
+}
+
+.feedback-text {
+    font-size: 0.98rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    color: #61464a;
+}
+
+.restart-btn {
+    background: linear-gradient(135deg, #4a2831, #5c323d);
+}
+
+/* Helper Class controlling view rendering layout sets toggles */
+.hidden {
+    display: none !important;
+}
+
+/* Floating animation script layout paths tracking upwards */
+@keyframes floatUpAndOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(0.8);
+    }
+    15% {
+        opacity: 1;
+        transform: translate(-50%, -150%) scale(1);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(-50%, -160%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -180%) scale(0.9);
+    }
+}

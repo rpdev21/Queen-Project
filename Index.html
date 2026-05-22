@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Romance Quiz Game</title>
+    <!-- Connecting the external stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Frame Border -->
+    <header class="top-border">
+        <h1>ARE U MY QUEEN ?</h1>
+    </header>
+
+    <!-- Middle Content Space -->
+    <main class="main-content">
+        <div class="game-card" id="quiz-card">
+            
+            <!-- Active Question Layout State -->
+            <div id="game-box">
+                <div class="quiz-header">
+                    <span class="category-tag">Queen's Trivia</span>
+                    <div class="progress-text">Question <span id="current-number">1</span> of 7</div>
+                </div>
+                
+                <!-- Horizontal Progress Strip Indicator -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progress-fill"></div>
+                </div>
+
+                <h2 class="question-text" id="question-text">Loading question data...</h2>
+                
+                <!-- Option Selection Rows Injected Dynamically -->
+                <div class="options-grid" id="options-container"></div>
+                
+                <!-- Next Action Step Button -->
+                <button id="next-btn" class="action-btn" disabled>Select an Answer</button>
+            </div>
+
+            <!-- Quiz End State Screen (Swaps into frame when finished) -->
+            <div id="results-box" class="hidden">
+                
+                <!-- Dynamic Kneeling Video Container Slot -->
+                <div id="video-container" class="hidden">
+                    <img src="Penguins.gif" alt="Kneeling before the queen" style="width:100%; height:auto; border-radius:12px;">
+                </div>
+
+                <div class="trophy-icon">❤️</div>
+                <h2>Quiz Completed!</h2>
+                <p class="score-display">You scored <span id="final-score">0</span></p>
+                <div class="feedback-text" id="feedback-text"></div>
+                <button id="restart-btn" class="action-btn restart-btn">Play Again</button>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Bottom Frame Border -->
+    <footer class="bottom-border">
+        <p>Made by, U know who ❤️❤️❤️</p>
+    </footer>
+
+    <!-- Connecting the external script sheet -->
+    <script src="main.js"></script>
+</body>
+</html>
